@@ -2,6 +2,7 @@ $(document).ready(function(){
     $(".mapPane").each(function(){
         _mapDivs.push($(this).attr("id"));
         $(this).append("<div id='" + $(this).attr("id") +"blind' class='mapBlind'></div>");
+        $(this).append("<div id='" + $(this).attr("id") +"titlePane' class='mapTitlePane'><p id='" + $(this).attr("id") +"title' class='mapTitle'></p></div>");
         $(this).append("<img id='" + $(this).attr("id") +"loader' class='loader' src='images/loader.gif' alt=''>");
 		$(this).append("<div id='" + $(this).attr("id") +"controls' class='mapControls'><img id='" + $(this).attr("id") +"details' class='details mapCtrl' title='View map details' alt='' src='images/details.png'><img id='" + $(this).attr("id") +"fullscreen' class='fullscreen mapCtrl' title='View larger map' alt='' src='images/fullscreen.png'></div>");
 		$(".mapControls").fadeTo("1","0.8").hide();

@@ -72,7 +72,7 @@ var addWebmapIds = function(queryResponse){
         loadMaps();
     }
     else{
-        displayNewMap();
+        //displayNewMap();
     }
 };
 
@@ -97,6 +97,7 @@ var loadMaps = function(){
 			var layers = response.itemInfo.itemData.operationalLayers;
 			
 			$("#"+mapDiv+"fullscreen").data("details","true");
+            $("#"+mapDiv+"title").html(response.itemInfo.item.title);
 			if(response.itemInfo.item.description === null){
 				$("#"+mapDiv+"fullscreen").data("details","false");
 			}
@@ -113,6 +114,7 @@ var loadMaps = function(){
                     if(_mapsLoaded === configOptions.numOfWebmaps){
                         randomizeMaps();
                     }
+                    $(".esriSimpleSlider").css("top",40);
                 }
             });
 			
@@ -143,7 +145,7 @@ var randomizeMaps = function(){
 				_group.queryItems(_nextQuery).then(addWebmapIds);
 			}
 			else{
-				displayNewMap();
+				//displayNewMap();
 			}
 		}, configOptions.delay);
 	}
